@@ -34,14 +34,13 @@ L.control.layers(baseMaps).addTo(map);
 // // Then we add our 'graymap' tile layer to the map.
 // dark.addTo(map);
 
-// Accessing the Toronto neighborhoods GeoJSON URL.
-let earthquakes = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson";
+// // Accessing the Toronto neighborhoods GeoJSON URL.
+// let earthquakes = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson";
 
-// Grabbing our GeoJSON data.
-d3.json(earthquakes).then(function(data) {
-  console.log(data);
-// Creating a GeoJSON layer with the retrieved data.
-L.geoJSON(data).addTo(map);
+// Retrieve the earthquake GeoJSON data.
+d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson").then(function(data) {
+  // Creating a GeoJSON layer with the retrieved data.
+  L.geoJSON(data).addTo(map);
 });
 
 // L.geoJSON(data, {
