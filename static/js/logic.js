@@ -92,13 +92,9 @@ let airportData = "https://raw.githubusercontent.com/lavec0324/Mapping_Earthquak
 
 // Grabbing our GeoJSON data.
 d3.json(airportData).then(function(data) {
-  console.log(data);  
-  layer.bindPopup("<h3>" +  "Airport code: " + feature.properties.faa   + "</h3>");
-  // "<h3>" + "<sup>" + "______________________________________________" + "</sup>" + "</h3>" +
-  // "<h3>" + "Aiport name: " + feature.properties.name + "</h3>");;
-// Creating a GeoJSON layer with the retrieved data.
+  console.log(data);
+// Creating a GeoJSON layer with the retrieved data
 L.geoJSON(data).addTo(map);
-});
 
 // // Grabbing our GeoJSON data.
 // L.geoJSON(airportData, {
